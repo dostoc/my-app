@@ -1,0 +1,19 @@
+.header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid lawngreen;
+  height: 5em;
+}
+
+.icon{
+  margin-top: .5em;
+  width: 5em;
+  height: 5em;
+}
+
+.footer{
+  border-top:1px solid lawngreen;
+  height: 3em;
+  text-align: center;
+}
