@@ -1,29 +1,16 @@
-import React, { useEffect, useState, mark } from 'react'
-import { obtenerProductos } from '../servicios/productoService'
+import React, { useEffect, useState } from 'react';
+import { obtenerProductos } from '../servicios/productoService';
 import Producto from './Producto';
+import useProducto from '../hooks/useProducto';
 
 export default function Productos() {
+  const { productos } = useProducto();
 
-    const [productos, setProductos] = useState([])
-
-    useEffect(() => {
-        obtenerProductos().then(data => {
-            console.log(data);
-            setProductos(data)
-        })
-    }, [])
-
-    return (
-        <div>
-            {
-                productos.map(producto => (
-                    <div className="productos">
-                        <div className="info">
-                            <p>{producto.title}</p>
-                            <mark>${producto.price}</mark>
-                        </div>
-                    </div>))
-            }
-        </div>
-    )
+  return (
+    <div className="productos">
+      {productos.map((producto) => (
+        <Producto key={producto.id} producto={producto} />
+      ))}
+    </div>
+  );
 }
