@@ -1,11 +1,9 @@
-import { useEffect, useState } from 'react'
-import { obtenerProductos} from '../servicios/productoService'
+import { useEffect, useState } from 'react';
+import { obtenerProductos } from '../servicios/productoService';
 
 export default function useProducto() {
   const [productos, setProductos] = useState([]);
   const [favoritos, setFavoritos] = useState([]);
-
-
 
   useEffect(() => {
     obtenerProductos().then((data) => {
@@ -14,18 +12,23 @@ export default function useProducto() {
     });
   }, []);
 
-
-  function agregarAFavoritos(producto){
-    const newFavoritos = [...favoritos]
-    newFavoritos.push(producto)
-    setFavoritos(newFavoritos)
+  function agregarAFavoritos(producto) {
+    const newFavoritos = [...favoritos];
+    newFavoritos.push(producto);
+    setFavoritos(newFavoritos);
   }
 
-
-  function eliminarDeFavoritos(producto){
-    const newFavoritos = favoritos.filter(e => e.id !== producto.id)
-    setFavoritos(newFavoritos)
+  function eliminarDeFavoritos(producto) {
+    const newFavoritos = favoritos.filter((e) => e.id !== producto.id);
+    setFavoritos(newFavoritos);
   }
 
-  return { productos, favoritos, agregarAFavoritos, eliminarDeFavoritos };
+  return {
+    productos,
+    favoritos,
+    agregarAFavoritos,
+    eliminarDeFavoritos,
+    borrar,
+  };
 }
+/*hola mundo*/
