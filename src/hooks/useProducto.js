@@ -27,8 +27,8 @@ export default function useProducto() {
     productos,
     favoritos,
     agregarAFavoritos,
-    eliminarDeFavoritos,
-    borrar,
+    eliminarDeFavoritos
   };
 }
+
 /*hola mundo*/
