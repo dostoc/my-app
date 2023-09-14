@@ -10,7 +10,7 @@ export default function Header() {
         
         <nav className="navbar">
             <Link to={"/"}>Productos</Link>
-            <Link to={"/"}>Favoritos</Link>
+            <Link to={"/favoritos"}>Favoritos</Link>
         </nav>
     
     </header>

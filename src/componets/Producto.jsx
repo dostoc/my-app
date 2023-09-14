@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom'
-import FavImg from '../img/onlike.png';
-import NoFavImg from '../img/ondislike.png';
+import NoFavImg from '../img/onlike.png';
+import FavImg from '../img/ondislike.png';
 
 export default function Producto({producto, agregarAFavoritos, eliminarDeFavoritos}) {
   
