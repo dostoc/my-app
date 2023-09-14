@@ -1,15 +1,22 @@
 import React, { useState } from 'react';
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import FavImg from '../img/onlike.png';
 import NoFavImg from '../img/ondislike.png';
 
 export default function Producto({producto, agregarAFavoritos, eliminarDeFavoritos}) {
   
   const [favorito, setFavorito] = useState(false)
-
+  
   function handleClick() {
-    setFavorito(!favorito);
+    if (favorito) {
+      eliminarDeFavoritos(producto)
+      setFavorito(false)
+    } else {
+      agregarAFavoritos(producto)
+      setFavorito(true)
+    }
   }
+
 
   return (
     <div className="producto">
@@ -18,11 +25,12 @@ export default function Producto({producto, agregarAFavoritos, eliminarDeFavorit
         <p>{producto.title}</p>
         <mark>${producto.price}</mark>
       </div>
-      {favorito ? (
-        <img className="fav-icon" src={FavImg} onClick={handleClick} />
-      ) : (
-        <img className="fav-icon" src={NoFavImg} onClick={handleClick} />
-      )}
+      {
+        favorito ? 
+        <img className='fav-icon' onClick={handleClick} src={NoFavImg}  />
+        : 
+        <img className='fav-icon' onClick={handleClick} src={FavImg}  />
+      }
     </div>
   );
 }
