@@ -1,15 +1,19 @@
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid lawngreen;
-  height: 5em;
+  border-bottom: 1px solid rgb(253,202,60);
+  height: 70px;
 }
 
 .icon {
-  margin-top: 0.5em;
-  width: 5em;
-  height: 5em;
+  width: 50px;
+  height: 50px;
 }
 
 .footer {
@@ -19,6 +23,9 @@
 }
 
 .productos {
+  flex: 1;
+  margin-top: 30px;
+  margin-bottom: 30px;
   display: flex;
   flex-direction: column;
   gap: 30px;
@@ -45,4 +52,18 @@
 .producto .fav-icon {
   width: 50px;
   height: 50px;
+}
+
+
+.detalle{
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  flex: 1;
+}
+
+
+.detalle img {
+  width: 40%;
+  height: 300px;
 }
