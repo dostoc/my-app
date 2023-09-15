@@ -6,8 +6,10 @@ export default function Productos({productos, agregarAFavoritos, eliminarDeFavor
   return (
     <div className='productos'>
       {
-        productos.length > 0 ? productos.map(producto => <Producto key={producto.id} producto={producto} agregarAFavoritos={agregarAFavoritos} eliminarDeFavoritos={eliminarDeFavoritos}/>)
-        :<p>No hay productos en la lista</p>
+        productos.length > 0 ? 
+        productos.map(producto => <Producto key={producto.id} producto={producto} agregarAFavoritos={agregarAFavoritos} eliminarDeFavoritos={eliminarDeFavoritos}/>)
+        :
+        <p>No hay productos en la lista</p>
       }
     </div>
   )
